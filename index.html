@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>nosso lugar ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: 'Inter', sans-serif;
+  color: #2b2b2b;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 60px;
+  font-size: 14px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* IMAGEM */
+.image-box img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* TEXTO */
+.hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+/* MÚSICAS */
+.music {
+  margin-top: 40px;
+}
+
+.music h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.music a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+
+.music a:hover {
+  opacity: 0.5;
+}
+
+/* TEXTO AMOR */
+.love-text {
+  margin-top: 40px;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  line-height: 1.6;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+/* BOTÃO */
+.btn {
+  margin: 50px auto;
+  display: block;
+  padding: 14px 40px;
+  border-radius: 30px;
+  border: none;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOTIVOS */
+.motivos {
+  display: none;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-box {
+    order: -1;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-text h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .hero-text p {
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>nosso lugar ♡</h1>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+
+    <!-- IMAGEM (TOPO / ESQUERDA) -->
+    <div class="image-box">
+      <img src="https://i.postimg.cc/DZrsQ404/IMG-1878.jpg">
+    </div>
+
+    <!-- TEXTO + MÚSICAS -->
+    <div>
+      <div class="hero-text">
+        <h2>i just wanna be yours ♡</h2>
+        <p>e todos os meus amanhãs também.</p>
+      </div>
+
+      <div class="music">
+        <h3>músicas pra nós ♡</h3>
+
+        <a href="https://open.spotify.com/search/Valentine%20Laufey" target="_blank">Valentine – Laufey</a>
+        <a href="https://open.spotify.com/search/Promise%20Laufey" target="_blank">Promise – Laufey</a>
+        <a href="https://open.spotify.com/search/A%20Night%20to%20Remember%20Laufey%20beabadoobee" target="_blank">A Night to Remember – Laufey & beabadoobee</a>
+        <a href="https://open.spotify.com/search/Lover%20Girl%20Laufey" target="_blank">Lover Girl – Laufey</a>
+        <a href="https://open.spotify.com/search/Too%20Little%20Too%20Late%20Laufey" target="_blank">Too Little Too Late – Laufey</a>
+      </div>
+
+      <div class="love-text">
+        Desde que você chegou, tudo ficou mais leve.
+        Você me faz rir quando eu nem quero,
+        me acolhe nos meus dias difíceis
+        e comemora cada pequena conquista comigo.<br><br>
+
+        Com você, eu posso ser eu mesma,
+        sem medo, sem filtros.<br><br>
+
+        Eu te amo mais do que palavras conseguem dizer.
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<button class="btn" onclick="mostrarMotivos()">CLIQUE AQUI</button>
+
+<div class="motivos" id="motivos">
+  <h3>100 motivos pra te amar ♡</h3>
+  <ul id="lista"></ul>
+</div>
+
+<footer>
+  feito com todo meu amor, pra você ♡
+</footer>
+
+<script>
+function mostrarMotivos() {
+  const lista = document.getElementById("lista");
+  const div = document.getElementById("motivos");
+
+  if (lista.innerHTML === "") {
+    for (let i = 1; i <= 100; i++) {
+      let li = document.createElement("li");
+      li.textContent = "Motivo " + i + ": porque eu te amo 💙";
+      lista.appendChild(li);
+    }
+  }
+
+  div.style.display = "block";
+  div.scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
